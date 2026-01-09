@@ -111,6 +111,54 @@ This section explains **why each major dependency exists**, what it does, and wh
 uvicorn index:app --reload
 
 
+## 🔐 Backend Environment Variables (`.env`)
+
+The backend relies on environment variables to manage secrets, API keys, and configuration.  
+These values are stored in a `.env` file inside the `backend/` directory.
+
+⚠️ **Important**
+- Never commit `.env` files to GitHub
+- Always use placeholder values in documentation
+- Use `.env.example` for reference
+
+---
+
+## 📄 `.env` File Structure
+
+Create a file named `.env` inside the `backend/` folder:
+
+```bash
+cd backend
+touch .env
+
+
+# ================================
+# AI / LLM Configuration
+# ================================
+GROQ_API_KEY=your_groq_api_key_here
+
+
+# ================================
+# Cloudinary (Media Storage)
+# ================================
+CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+CLOUDINARY_API_KEY=your_cloudinary_api_key
+CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+
+
+# ================================
+# Database Configuration
+# ================================
+DATABASE_URL=postgresql://<username>:<password>@<host>:<port>/<database>
+
+
+# ================================
+# Application Settings
+# ================================
+DEBUG=True
+PORT=8000
+
+
 
 
 ## 🎨 Frontend Setup & Commands
