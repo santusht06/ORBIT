@@ -37,3 +37,7 @@ huggingface-hub==0.20.3
 # Settings (LET LANGCHAIN DECIDE)
 # ===============================
 pydantic-settings>=2.3.0
+
+PyPDF2
+groq
+cloudinary
