@@ -52,44 +52,44 @@ The frontend and backend are kept **fully separate** for clean architecture and 
 - Git & GitHub
 - Node.js (v18+ recommended)
 - npm
+- Docker
 
 ---
 
 ## 🗂️ Project Structure
 
-
+The project is structured as follows:
+```markdown
+ORBIT/
+├── backend/
+│   ├── .gitignore
+│   ├── .venv
+│   ├── Dockerfile
+│   ├── index.py
+│   ├── models/
+│   ├── controllers/
+│   ├── routers/
+│   ├── utils/
+│   ├── lib/
+│   └── requirements.txt
+├── frontend/
+│   ├── .gitignore
+│   ├── Dockerfile
+│   ├── index.html
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── vite.config.js
+│   ├── src/
+│   └── README.md
+├── .gitignore
+├── docker-compose.yml
+└── README.md
+```
 
 ## 🧠 Backend: Virtual Environment & Environment Variables
 
 This project uses a Python virtual environment (`venv`) to manage backend dependencies and a `.env` file to store environment variables.
 
----
-
-### 📦 Create Python Virtual Environment
-
-Run the following commands **from the project root**:
-
-```bash
-cd backend
-python -m venv .venv
-
-
-## 📦 Backend Dependencies (Virtual Environment Packages Explained)
-
-The backend uses a Python virtual environment (`.venv`) to isolate dependencies.  
-All installed packages are stored inside:
-
-
-This section explains **why each major dependency exists**, what it does, and which layer of the backend uses it.
-
----
-
-## 🧠 Core Web Framework & Server
-
-### fastapi
-- **Purpose:** Core backend web framework
-- **Why it exists:** Handles API creation, routing, request/response handling
-- **Used in:** `routers/`, `controllers/`, `index.py`
 - **Cannot remove:** ❌ (Backend will not run)
 
 ---
