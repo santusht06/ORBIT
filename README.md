@@ -90,17 +90,43 @@ ORBIT/
 
 This project uses a Python virtual environment (`venv`) to manage backend dependencies and a `.env` file to store environment variables.
 
-- **Cannot remove:** ❌ (Backend will not run)
+### 📦 Create Python Virtual Environment
+
+Run the following commands **from the project root**:
+
+```bash
+cd backend
+python -m venv .venv
+source .venv/bin/activate  # On Linux/Mac
+.venv\Scripts\activate  # On Windows
+```
+
+### 📦 Backend Dependencies (Virtual Environment Packages Explained)
+
+The backend uses a Python virtual environment (`.venv`) to isolate dependencies.  
+All installed packages are stored inside:
+
+```bash
+pip install -r requirements.txt
+```
+
+This section explains **why each major dependency exists**, what it does, and which layer of the backend uses it.
 
 ---
+
+## 🧠 Core Web Framework & Server
+
+### fastapi
+- **Purpose:** Core backend web framework
+- **Why it exists:** Handles API creation, routing, request/response handling
+- **Used in:** `routers/`, `controllers/`, `index.py`
+- **Cannot remove:** ❌ (Backend will not run)
 
 ### starlette
 - **Purpose:** ASGI toolkit used internally by FastAPI
 - **Why it exists:** FastAPI is built on top of Starlette
 - **Used in:** Internal request lifecycle
 - **Direct usage:** ❌ (Indirect dependency)
-
----
 
 ### uvicorn
 - **Purpose:** ASGI server
@@ -109,7 +135,7 @@ This project uses a Python virtual environment (`venv`) to manage backend depend
 - **Example usage:**
 ```bash
 uvicorn index:app --reload
-
+```
 
 ## 🔐 Backend Environment Variables (`.env`)
 
@@ -130,35 +156,9 @@ Create a file named `.env` inside the `backend/` folder:
 ```bash
 cd backend
 touch .env
+```
 
-
-# ================================
-# AI / LLM Configuration
-# ================================
-GROQ_API_KEY=your_groq_api_key_here
-
-
-# ================================
-# Cloudinary (Media Storage)
-# ================================
-CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
-CLOUDINARY_API_KEY=your_cloudinary_api_key
-CLOUDINARY_API_SECRET=your_cloudinary_api_secret
-
-
-# ================================
-# Database Configuration
-# ================================
-DATABASE_URL=postgresql://<username>:<password>@<host>:<port>/<database>
-
-
-# ================================
-# Application Settings
-# ================================
-DEBUG=True
-PORT=8000
-
-
+```makefile
 
 
 ## 🎨 Frontend Setup & Commands
