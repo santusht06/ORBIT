@@ -159,24 +159,34 @@ touch .env
 ```
 
 ```makefile
+# ================================
+# AI / LLM Configuration
+# ================================
+GROQ_API_KEY=your_groq_api_key_here
 
+# ================================
+# Cloudinary (Media Storage)
+# ================================
+CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+CLOUDINARY_API_KEY=your_cloudinary_api_key
+CLOUDINARY_API_SECRET=your_cloudinary_api_secret
 
-## 🎨 Frontend Setup & Commands
+# ================================
+# Database Configuration
+# ================================
+DATABASE_URL=postgresql://<username>:<password>@<host>:<port>/<database>
 
-This section explains how to set up, run, and manage the frontend application locally.
-
----
-
-### 📁 Navigate to Frontend Directory
-
-From the project root:
+# ================================
+# Application Settings
+# ================================
+DEBUG=True
+PORT=8000
+```
 
 ## 🎨 Frontend Setup & Commands
 
 This section explains how to set up, run, and manage the frontend application locally.  
 Follow these steps **after cloning the repository**.
-
----
 
 ### 📁 Navigate to Frontend Directory
 
@@ -184,9 +194,38 @@ From the project root:
 
 ```bash
 cd frontend
+```
 
+### 📦 Install Dependencies
 
+```bash
 npm install
+```
 
+### 📦 Run Development Server
 
+```bash
 npm run dev
+```
+
+## 🚀 Installation
+
+To install the project, follow these steps:
+
+1. Clone the repository
+2. Navigate to the project root
+3. Create a Python virtual environment for the backend
+4. Activate the virtual environment
+5. Install backend dependencies
+6. Create a `.env` file for backend environment variables
+7. Navigate to the frontend directory
+8. Install frontend dependencies
+9. Run the development server
+
+## 🚀 Usage
+
+To use the project, follow these steps:
+
+1. Start the backend server using `uvicorn index:app --reload`
+2. Start the frontend development server using `npm run dev`
+3. Open a web browser and navigate to `http://localhost:3000` (or the port specified in the `.env` file)
