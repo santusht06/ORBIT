@@ -38,7 +38,7 @@ The frontend and backend are kept **fully separate** for clean architecture and 
 
 ### Backend
 - Python 3.10+
-- FastAPI / Flask-style architecture
+- FastAPI / Flask‑style architecture
 - REST APIs
 - Virtual Environment (`.venv`)
 
@@ -101,18 +101,18 @@ source .venv/bin/activate  # On Linux/Mac
 .venv\Scripts\activate  # On Windows
 ```
 
-### 📦 Backend Dependencies (Virtual Environment Packages Explained)
-
-The backend uses a Python virtual environment (`.venv`) to isolate dependencies.  
-All installed packages are stored inside:
+### 📦 Install Backend Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-This section explains **why each major dependency exists**, what it does, and which layer of the backend uses it.
+### 📄 `.env` File Structure
 
----
+Create a file named `.env` inside the `backend/` folder (you can copy the provided example):
+
+```bash
+cd backend
 
 ## 🧠 Core Web Framework & Server
 
@@ -228,4 +228,3 @@ To use the project, follow these steps:
 
 1. Start the backend server using `uvicorn index:app --reload`
 2. Start the frontend development server using `npm run dev`
-3. Open a web browser and navigate to `http://localhost:3000` (or the port specified in the `.env` file)
