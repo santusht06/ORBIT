@@ -113,49 +113,7 @@ Create a file named `.env` inside the `backend/` folder (you can copy the provid
 
 ```bash
 cd backend
-
-## 🧠 Core Web Framework & Server
-
-### fastapi
-- **Purpose:** Core backend web framework
-- **Why it exists:** Handles API creation, routing, request/response handling
-- **Used in:** `routers/`, `controllers/`, `index.py`
-- **Cannot remove:** ❌ (Backend will not run)
-
-### starlette
-- **Purpose:** ASGI toolkit used internally by FastAPI
-- **Why it exists:** FastAPI is built on top of Starlette
-- **Used in:** Internal request lifecycle
-- **Direct usage:** ❌ (Indirect dependency)
-
-### uvicorn
-- **Purpose:** ASGI server
-- **Why it exists:** Runs the FastAPI application
-- **Used in:** Application startup
-- **Example usage:**
-```bash
-uvicorn index:app --reload
-```
-
-## 🔐 Backend Environment Variables (`.env`)
-
-The backend relies on environment variables to manage secrets, API keys, and configuration.  
-These values are stored in a `.env` file inside the `backend/` directory.
-
-⚠️ **Important**
-- Never commit `.env` files to GitHub
-- Always use placeholder values in documentation
-- Use `.env.example` for reference
-
----
-
-## 📄 `.env` File Structure
-
-Create a file named `.env` inside the `backend/` folder:
-
-```bash
-cd backend
-touch .env
+cp .env.example .env   # if .env.example exists
 ```
 
 ```makefile
@@ -183,14 +141,17 @@ DEBUG=True
 PORT=8000
 ```
 
+> **⚠️ Important**  
+> - Never commit `.env` files to the repository.  
+> - Use placeholder values in documentation.  
+> - Keep a `.env.example` file for reference.
+
 ## 🎨 Frontend Setup & Commands
 
 This section explains how to set up, run, and manage the frontend application locally.  
 Follow these steps **after cloning the repository**.
 
 ### 📁 Navigate to Frontend Directory
-
-From the project root:
 
 ```bash
 cd frontend
@@ -210,21 +171,60 @@ npm run dev
 
 ## 🚀 Installation
 
-To install the project, follow these steps:
+1. **Clone the repository**  
+   ```bash
+   git clone <repository_url>
+   cd ORBIT
+   ```
 
-1. Clone the repository
-2. Navigate to the project root
-3. Create a Python virtual environment for the backend
-4. Activate the virtual environment
-5. Install backend dependencies
-6. Create a `.env` file for backend environment variables
-7. Navigate to the frontend directory
-8. Install frontend dependencies
-9. Run the development server
+2. **Backend**  
+   ```bash
+   cd backend
+   python -m venv .venv
+   source .venv/bin/activate   # Linux/Mac
+   .venv\Scripts\activate       # Windows
+   pip install -r requirements.txt
+   cp .env.example .env   # customize the values
+   ```
+
+3. **Frontend**  
+   ```bash
+   cd ../frontend
+   npm install
+   ```
+
+4. **Optional: Docker**  
+   If you prefer containerised setup, ensure Docker is installed and run:  
+   ```bash
+   cd ..
+   docker-compose up --build
+   ```
 
 ## 🚀 Usage
 
-To use the project, follow these steps:
+### Local Development
 
-1. Start the backend server using `uvicorn index:app --reload`
-2. Start the frontend development server using `npm run dev`
+- **Start the backend server**  
+  ```bash
+  cd backend
+  uvicorn index:app --reload
+  ```
+
+- **Start the frontend development server**  
+  ```bash
+  cd ../frontend
+  npm run dev
+  ```
+
+- Open a web browser and navigate to `http://localhost:3000`.
+
+### Docker Compose
+
+```bash
+docker-compose up --build
+```
+
+- Backend will be available at `http://localhost:8000`.  
+- Frontend will be available at `http://localhost:3000`.
+
+---
