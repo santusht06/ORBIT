@@ -74,9 +74,6 @@ ORBIT/
 │   ├── Dockerfile
 │   ├── index.html
 │   ├── package.json
-│   ├── Dockerfile
-│   ├── index.html
-│   ├── package.json
 │   ├── package-lock.json
 │   ├── vite.config.js
 │   ├── src/
@@ -151,6 +148,9 @@ PORT=8000
 This section explains how to set up, run, and manage the frontend application locally.  
 Follow these steps **after cloning the repository**.
 
+### 📁 Navigate to Frontend Directory
+
+```bash
 ### 📁 Navigate to Frontend Directory
 
 ```bash
