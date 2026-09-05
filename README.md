@@ -10,14 +10,11 @@ The project is structured for clarity, scalability, and ease of contribution.
 - [Project Overview](#project-overview)
 - [Tech Stack](#tech-stack)
 - [Project Structure](#project-structure)
-- [Prerequisites](#prerequisites)
 - [Backend Documentation](#backend-documentation)
 - [Frontend Documentation](#frontend-documentation)
 - [Connecting Frontend & Backend](#connecting-frontend--backend)
-- [Common Errors & Fixes](#common-errors--fixes)
-- [Best Practices](#best-practices)
-- [Deployment Notes](#deployment-notes)
-- [Contributing](#contributing)
+- [Installation](#installation)
+- [Usage](#usage)
 
 ---
 
@@ -38,7 +35,7 @@ The frontend and backend are kept **fully separate** for clean architecture and 
 
 ### Backend
 - Python 3.10+
-- FastAPI / Flask‑style architecture
+- FastAPI (Flask‑style architecture)
 - REST APIs
 - Virtual Environment (`.venv`)
 
@@ -74,6 +71,9 @@ ORBIT/
 │   └── requirements.txt
 ├── frontend/
 │   ├── .gitignore
+│   ├── Dockerfile
+│   ├── index.html
+│   ├── package.json
 │   ├── Dockerfile
 │   ├── index.html
 │   ├── package.json
@@ -227,4 +227,3 @@ docker-compose up --build
 - Backend will be available at `http://localhost:8000`.  
 - Frontend will be available at `http://localhost:3000`.
 
----
