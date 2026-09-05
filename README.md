@@ -151,9 +151,6 @@ Follow these steps **after cloning the repository**.
 ### 📁 Navigate to Frontend Directory
 
 ```bash
-### 📁 Navigate to Frontend Directory
-
-```bash
 cd frontend
 ```
 
@@ -168,6 +165,11 @@ npm install
 ```bash
 npm run dev
 ```
+
+## 🔗 Connecting Frontend & Backend
+
+The frontend communicates with the backend via HTTP requests to the FastAPI endpoints (e.g., `http://localhost:8000/chat/`).  
+Ensure the backend is running before using the UI, and configure any required proxy settings in `vite.config.js` if needed.
 
 ## 🚀 Installation
 
@@ -226,4 +228,3 @@ docker-compose up --build
 
 - Backend will be available at `http://localhost:8000`.  
 - Frontend will be available at `http://localhost:3000`.
-
